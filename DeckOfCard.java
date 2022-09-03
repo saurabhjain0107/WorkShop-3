@@ -31,6 +31,8 @@ public class DeckOfCard {
            numOfPlayers = sc.nextInt();
         }while (numOfPlayers < 2 || numOfPlayers > 4);
         for (int i = 0; i < numOfPlayers; i++){
+             System.out.println("Enter new player name:");
+             String playerName = sc.next();
             Players.addPlayer(new Players());
         }
             System.out.println("players added: "+numOfPlayers);
