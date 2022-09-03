@@ -1,6 +1,9 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class DeckOfCard {
+    static Scanner sc =  new Scanner(System.in);
 
     static void initializeCards(){
         System.out.println("initializing cards...");
@@ -21,10 +24,22 @@ public class DeckOfCard {
             }
             System.out.println("}");
         }
+        static void addPlayers(){
+        int numOfPlayers;
+        do{
+            System.out.println("Enter number of players (2 to 4): ");
+           numOfPlayers = sc.nextInt();
+        }while (numOfPlayers < 2 || numOfPlayers > 4);
+        for (int i = 0; i < numOfPlayers; i++){
+            Players.addPlayer(new Players());
+        }
+            System.out.println("players added: "+numOfPlayers);
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Deck of Card:");
         initializeCards();
+        addPlayers();
 
     }
 }
